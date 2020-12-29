@@ -5,7 +5,7 @@
 module.exports = {
   serverRuntimeConfig: {
     // Will only be available on the server side
-    SERVER_API_URL: process.env.API_URL,
+    SERVER_API_URL: process.env.SERVER_API_URL,
     BASE_URL_ONLY: process.env.BASE_URL_ONLY,
   },
   publicRuntimeConfig: {
