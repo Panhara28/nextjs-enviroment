@@ -5,5 +5,7 @@ COPY package.json yarn.lock ./
 RUN yarn
 COPY . .
 RUN yarn build
+ARG SERVER_API_URL=${SERVER_API_URL}
+ENV SERVER_API_URL=${SERVER_API_URL}
 EXPOSE 3000
 CMD ["node_modules/.bin/next", "dev"]
