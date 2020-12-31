@@ -7,4 +7,4 @@ COPY . .
 RUN yarn build
 
 EXPOSE 3000
-CMD ["node_modules/.bin/next", "dev"]
+CMD ["yarn", "start"]
