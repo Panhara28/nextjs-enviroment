@@ -15,18 +15,18 @@ console.log('API_FROM_CLIENT_SERVER >>>>  ', API_FROM_CLIENT_SERVER);
 console.log('API_FROM_SERVER_ONLY >>>>  ', API_FROM_SERVER);
 
 export default function Home() {
-//   const { data, loading } = useQuery(gql`
-//     query tagList{
-//       tagList{
-//         data{
-//           id
-//         }
-//       }
-//     }
-//   `)
+  const { data, loading } = useQuery(gql`
+    query tagList{
+      tagList{
+        data{
+          id
+        }
+      }
+    }
+  `)
 
-//   if(loading) return <div>Loading...</div>
-//   console.log(data);
+  if(loading) return <div>Loading...</div>
+  console.log(data);
 
   return (
     <div className={styles.container}>
