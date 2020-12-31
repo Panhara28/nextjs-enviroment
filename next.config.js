@@ -5,13 +5,10 @@
 module.exports = {
   serverRuntimeConfig: {
     // Will only be available on the server side
-    SERVER_API_URL: process.env.SERVER_API_URL,
     API_FROM_SERVER: process.env.API_FROM_SERVER
   },
   publicRuntimeConfig: {
     // Will be available on both server and client
-    CLIENT_URL_ONLY: process.env.CLIENT_URL_ONLY,
-    BOTH_SERVER_CLIENT: process.env.BOTH_SERVER_CLIENT,
     API_FROM_CLIENT: process.env.API_FROM_CLIENT,
     API_FROM_CLIENT_SERVER: process.env.API_FROM_CLIENT_SERVER
   },
