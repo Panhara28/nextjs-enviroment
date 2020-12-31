@@ -5,33 +5,35 @@ import styles from '../styles/Home.module.css';
 import { gql, useQuery } from '@apollo/client';
 
 const {
-  serverRuntimeConfig: { BASE_URL_ONLY } = {},
+  publicRuntimeConfig: { CLIENT_URL_ONLY } = {},
+  publicRuntimeConfig: { BOTH_SERVER_CLIENT } = {},
   serverRuntimeConfig: { SERVER_API_URL } = {},
-  publicRuntimeConfig: { BASE_URL_BOTH } = {},
 } = getConfig();
 
-console.log('serverRuntimeConfig>>>>  ', BASE_URL_ONLY);
-console.log('publicRuntimeConfig>>>>  ', BASE_URL_BOTH);
+console.log('serverRuntimeConfig>>>>  ', CLIENT_URL_ONLY);
+console.log('publicRuntimeConfig>>>>  ', BOTH_SERVER_CLIENT);
 console.log('SERVER_API_URL>>>>  ', SERVER_API_URL);
 
 export default function Home() {
-  const { data, loading } = useQuery(gql`
-    query tagList{
-      tagList{
-        data{
-          id
-        }
-      }
-    }
-  `)
-  if(loading) return <div>Loading...</div>
-  console.log(data);
+//   const { data, loading } = useQuery(gql`
+//     query tagList{
+//       tagList{
+//         data{
+//           id
+//         }
+//       }
+//     }
+//   `)
+
+//   if(loading) return <div>Loading...</div>
+//   console.log(data);
+
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h2>{`BASE_URL_ONLY: ${BASE_URL_ONLY || ''}`}</h2>
-        <h2>{`BASE_URL_BOTH: ${BASE_URL_BOTH || ''}`}</h2>
-        <h2>{`API_URL: ${API_URL || ''}`}</h2>
+        <h2>{`CLIENT_URL_ONLY: ${CLIENT_URL_ONLY || ''}`}</h2>
+        <h2>{`SERVER_API_URL: ${SERVER_API_URL || ''}`}</h2>
+        <h2>{`BOTH_SERVER_CLIENT: ${BOTH_SERVER_CLIENT || ''}`}</h2>
       </main>
     </div>
   );
